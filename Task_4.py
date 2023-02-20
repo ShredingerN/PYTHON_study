@@ -21,4 +21,4 @@ if fin_res > 0:
     print(f"Рентабельность фирмы: {round(profit, 2)}, "
           f"прибыль на одного сотрудника: {round(res_per_person, 2)}")
 else:
-    print(f"Убыток состовляет:{fin_res} ")
+    print(f"Убыток состовляет:{fin_res}")
