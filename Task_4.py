@@ -7,10 +7,8 @@
 # Далее запросите численность сотрудников фирмы и определите
 # прибыль фирмы в расчете на одного сотрудника.
 
-print("Введите выручку фирмы: ")
-earn = int(input())
-print("Введите издержки фирмы: ")
-cost = int(input())
+earn = int(input("Введите выручку фирмы: "))
+cost = int(input("Введите издержки фирмы: "))
 fin_res = earn - cost
 if fin_res > 0:
     print(f"Выручка состовляет:{fin_res} ")
@@ -18,7 +16,9 @@ if fin_res > 0:
     print("Введите  количество сотрудников: ")
     people = int(input())
     res_per_person = fin_res / people
-    print(f"Рентабельность фирмы: {round(profit, 2)}, "
-          f"прибыль на одного сотрудника: {round(res_per_person, 2)}")
-else:
+    print(f"Рентабельность фирмы: {profit:.2f}, "
+          f"прибыль на одного сотрудника: {res_per_person:.2f}")
+elif fin_res == 0:
+    print("Прибыль компании 0")
+elif fin_res == 0:
     print(f"Убыток состовляет:{fin_res}")
