@@ -11,3 +11,11 @@
 Введите целые числа через пробел: 1 2 3
 Результат: 2 1 3
 '''
+
+new_list = input("Введите элементы списка: ").split()
+print(f"исходный список: {new_list}")
+i = 0
+for el in range(int(len(new_list) / 2)):
+    new_list[i], new_list[i + 1] = new_list[i + 1], new_list[i]
+    i += 2
+print(f"обновленный список:{new_list}")
