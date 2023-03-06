@@ -17,6 +17,7 @@
 '''
 
 # мой вариант
+
 number = int(input("Введите цифру: "))
 my_list = [6,5,4,3,3,2]
 for element in my_list:
@@ -35,4 +36,3 @@ number = int(input("Введите цифру: "))
 my_list.append(int(number))
 my_list.sort(reverse=True)
 print(my_list)
-
