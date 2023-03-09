@@ -14,29 +14,34 @@ def calculator():
     oper = input('Введите операцию (+, -, *, / или 0 для выхода): ')
     if oper == '0':
         return 'Работа программы завершена'
-
-    num_1 = float(input('Введите первое число: '))
-    num_2 = float(input('Введите второе число: '))
-
-    if oper == '+':
-        print(f'{num_1 + num_2}')
-        return calculator()
-    if oper == '-':
-        print(f'{num_1 - num_2}')
-        return calculator()
-    if oper == '*':
-        print(f'{num_1 * num_2}')
-        return calculator()
-    try:
-        if oper == '/':
-            print(f'{num_1 / num_2}')
-            return calculator()
-    except ZeroDivisionError:
-        print('На 0 делить нельзя!')
-        calculator()
     else:
-        print('Неверный символ операции!')
-        return calculator()
+        # внесла поправку после семинара со списком операций
+        if oper in "+-*/":
+            try:
+                num_1 = float(input('Введите первое число: '))
+                num_2 = float(input('Введите второе число: '))
+                if oper == '+':
+                    print(f'{num_1 + num_2}')
+                    return calculator()
+                elif oper == '-':
+                    print(f'{num_1 - num_2}')
+                    return calculator()
+                elif oper == '*':
+                    print(f'{num_1 * num_2}')
+                    return calculator()
+                elif oper == '/':
+                    try:
+                        print(f'{num_1 / num_2}')
+                        return calculator()
+                    except ZeroDivisionError:
+                        print('На 0 делить нельзя!')
+                        return calculator()
+            except ValueError:
+                print('Это не число, а символ, повторите ввод')
+                return calculator()
+        else:
+            print('Неверный символ операции!')
+            return calculator()
 
 
-print(calculator())
+calculator()
