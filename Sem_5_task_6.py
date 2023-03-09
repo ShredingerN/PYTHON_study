@@ -15,7 +15,7 @@ print(
     'попробуйте угадать его, у вас есть 10 попыток.')
 
 
-def random(n, i=0):
+def random_number (n, i=0):
     if i == 10:
         return print(f'Вы проиграли. Загаданное число {n}')
     else:
@@ -25,16 +25,16 @@ def random(n, i=0):
             print('Ошибка! Это не число. Повторите ввод.')
             # ошибки из подсчета исключаются, у пользователя остается
             # 10 попыток именно на числа
-            return random(n, i)
+            return random_number(n, i)
         else:
             if a < n:
                 print('Загаданное число больше')
-                return random(n, i + 1)
+                return random_number(n, i + 1)
             elif a > n:
                 print('Загаданное число меньше')
-                return random(n, i + 1)
+                return random_number(n, i + 1)
             elif a == n:
                 return print(f'Вы угадали! Загаданное число {a}')
 
 
-random(num)
+random_number(num)
