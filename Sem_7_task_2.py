@@ -23,7 +23,7 @@ class Road:
 
     def mass_asf(self):
         # Road.density = 24
-        mass = self._length * self._width * Road.density * self.thikness / 1000
+        mass = self._length * self._width * self.density * self.thikness / 1000
         print(f'Масса асфальта для дорожного полотна шириной {self._width} м, '
               f'длиной {self._length} м равна - {mass} тонн')
 
