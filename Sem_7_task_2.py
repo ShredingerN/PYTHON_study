@@ -15,14 +15,15 @@ length (длина в метрах), width (ширина в метрах).
 
 class Road:
     density = 25
+    thikness = 0.05
 
     def __init__(self, width, length):
         self._length = length
         self._width = width
 
     def mass_asf(self):
-        self.thikness = 0.05
-        mass = self._length * self._width * self.density * self.thikness / 1000
+        # Road.density = 24
+        mass = self._length * self._width * Road.density * self.thikness / 1000
         print(f'Масса асфальта для дорожного полотна шириной {self._width} м, '
               f'длиной {self._length} м равна - {mass} тонн')
 
