@@ -26,9 +26,9 @@ data = {'одежда': ['свитер', 'джинсы', 'футболка', 'н
         'цена': {'свитер': '150€', 'джинсы': '300€', 'футболка': '100€',
                  'носки': '20€', 'шарф': '30€'}}
 
-with open('file.yaml', 'w') as f_n:
+with open('file.yaml', 'w', encoding="utf-8") as f_n:
     yaml.dump(data, f_n, default_flow_style=False, allow_unicode=True)
 
 
-with open('file.yaml') as f_n:
+with open('file.yaml', encoding="utf-8") as f_n:
     print(f_n.read())
