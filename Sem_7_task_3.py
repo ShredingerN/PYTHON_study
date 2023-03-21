@@ -17,7 +17,20 @@ str. str(self) - вызывается функциями str, print и format.
 """
 
 
+class TypeStr:
+
+    def __set__(self, instance, value):
+        if type(value) == int:
+            raise ValueError("Введите строковое значение")
+        instance.__dict__[self.my_attr] = value
+
+    def __set_name__(self, owner, my_attr):
+        self.my_attr = my_attr
+
+
 class Worker:
+    surname = TypeStr()
+    name = TypeStr()
 
     def __init__(self, name, surname, position, wage, bonus):
         self.name = name
@@ -34,7 +47,6 @@ class Position(Worker):
     def get_total_income(self):
         print(f'Total income: {sum(self._income.values())}')
 
-    # так нужно было сделать?
     def __str__(self):
         return f'Employee: {self.surname} {self.name}, ' \
                f'{self.position}, income: {sum(self._income.values())}'
@@ -45,3 +57,6 @@ emp_1.get_full_name()
 emp_1.get_total_income()
 print(emp_1.position)
 print(emp_1)
+
+emp_1.surname = 236548
+emp_1.get_full_name()
