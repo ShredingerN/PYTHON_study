@@ -7,6 +7,7 @@
 """
 
 list_words = ['attribute', 'класс', 'функция', 'type']
+# list_words = ['attribute', 'type']
 
 try:
     for el in list_words:
